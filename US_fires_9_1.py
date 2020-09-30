@@ -6,23 +6,18 @@ out_file = open('readable_fires_data.json','w')
 
 fires_data = json.load(in_file)
 
-#print(type(fires_data))
-
-#list_of_fires = fires_data()
-
-#print(type(list_of_fires))
-
-#print(len(list_of_fires))
 
 brights,lons,lats = [],[],[]
 
 for fire in fires_data:
-    bright = fire['brightness']
-    lon = fire['longitude']
-    lat = fire['latitude']
-    brights.append(bright)
-    lons.append(lon)
-    lats.append(lat)
+    if q > 450:
+        bright = fire["brightness"]
+        lon = fire["longitude"]
+        lat = fire["latitude"]
+        brights.append(bright)
+        lons.append(lon)
+        lats.append(lat)
+        
 
 print("Brights")
 print(brights)
@@ -44,7 +39,7 @@ data = [{
     'lon': lons,
     'lat': lats,
     'marker': {
-        'size':[5*bright for bright in brights],
+        #'size':[5*bright for bright in brights],
         'color':brights,
         'colorscale':'Viridis',
         'reversescale':True,
