@@ -10,7 +10,6 @@ fires_data = json.load(in_file)
 brights,lons,lats = [],[],[]
 
 for fire in fires_data:
-    if q > 450:
         bright = fire["brightness"]
         lon = fire["longitude"]
         lat = fire["latitude"]
@@ -39,7 +38,7 @@ data = [{
     'lon': lons,
     'lat': lats,
     'marker': {
-        #'size':[5*bright for bright in brights],
+        #'size':[1.2*bright for bright in brights],
         'color':brights,
         'colorscale':'Viridis',
         'reversescale':True,
