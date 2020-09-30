@@ -1,3 +1,3 @@
 JSON_Project
 
-This project is helping students to take data and create a graph to illutsrate it.
+This project helps students to take data and put it in a graph to illutsrate it.

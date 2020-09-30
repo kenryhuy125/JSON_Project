@@ -10,9 +10,10 @@ fires_data = json.load(in_file)
 brights,lons,lats = [],[],[]
 
 for fire in fires_data:
-        bright = fire["brightness"]
-        lon = fire["longitude"]
-        lat = fire["latitude"]
+    bright = fire["brightness"]
+    lon = fire["longitude"]
+    lat = fire["latitude"]
+    if bright > 450:
         brights.append(bright)
         lons.append(lon)
         lats.append(lat)
@@ -46,7 +47,7 @@ data = [{
     },
 }]
 
-my_layout = Layout(title='US Fires - 9/14/2020 through 9/20/2020')
+my_layout = Layout(title='US Fires - 9/1/2020 through 9/13/2020')
 
 fig = {'data':data, 'layout':my_layout}
 

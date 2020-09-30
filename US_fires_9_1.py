@@ -11,10 +11,10 @@ limit = 450
 brights,lons,lats = [],[],[]
 
 for fire in fires_data:
-    if fire > limit:
-        bright = fire["brightness"]
-        lon = fire["longitude"]
-        lat = fire["latitude"]
+    bright = fire["brightness"]
+    lon = fire["longitude"]
+    lat = fire["latitude"]
+    if bright > 450:
         brights.append(bright)
         lons.append(lon)
         lats.append(lat)
