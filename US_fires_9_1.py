@@ -6,10 +6,12 @@ out_file = open('readable_fires_data.json','w')
 
 fires_data = json.load(in_file)
 
+limit = 450
 
 brights,lons,lats = [],[],[]
 
 for fire in fires_data:
+    if fire > limit:
         bright = fire["brightness"]
         lon = fire["longitude"]
         lat = fire["latitude"]
